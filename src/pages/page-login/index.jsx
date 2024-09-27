@@ -8,13 +8,13 @@ export default function Login() {
         <h2>Log In</h2>
         <div className="input">
           <p>E-mail</p>
-          <input type="text" placeholder='Digite seu email' />
+          <input type="text"/>
         </div>
         <div className="input">
           <p>Senha</p>
-          <input type="text" placeholder='Digite sua senha' />
+          <input type="password"/>
         </div>
-        <Link>
+        <Link className='link'>
           <button>Entrar</button>
         </Link>
       </div>
