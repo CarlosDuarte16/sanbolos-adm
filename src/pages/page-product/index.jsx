@@ -33,17 +33,19 @@ export default function Products() {
             </div>
           </Link>
         </div>
-        <Link className='link-card'>
-          <div className="cards_products">
-            {consulProduct.map(item => (
-              <div className='card' key={item.id}>
+
+
+        <div className="cards_products">
+          {consulProduct.map(item => (
+            <Link to={`/edit-product/${item.id}`} key={item.id} className='link-card'>
+              <div className='card'>
                 <img src="/assets/image/bolo.jpeg" alt="" />
                 <h3>{item.nome}</h3>
                 <p>R${item.valor}</p>
               </div>
-            ))}
-          </div>
-        </Link>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

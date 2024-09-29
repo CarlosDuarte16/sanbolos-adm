@@ -1,17 +1,17 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/comp-sidebar';
 
 import axios from 'axios';
 
-import { useState } from 'react';
+import { useState, } from 'react';
 
 export default function AddProduct() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
-
+  const navigate = useNavigate(); 
  
   async function salvarBD() {
     const salvador = {
@@ -24,7 +24,7 @@ export default function AddProduct() {
 
     const url = 'http://localhost:5001/api/inserirProduto';
     let resp = await axios.post(url, salvador);
-
+    navigate('/products');
     alert(`Pessoa adicionada no BD. Id: ${resp.data.novoId}`)
   }
 
