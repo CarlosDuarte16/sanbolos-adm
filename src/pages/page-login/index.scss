@@ -13,7 +13,7 @@
   .card-login {
     display: flex;
     flex-direction: column;
-    background-color:rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 100px;
     border-radius: 15px;
     width: 30%;
@@ -21,11 +21,11 @@
     margin-left: 60%;
     margin-top: 10%;
 
-    h2{
+    h2 {
       display: flex;
       font-size: 2.4em;
       margin-top: -100px;
-      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       color: #bebcbc;
     }
 
@@ -35,6 +35,7 @@
       padding: 10px;
       width: 180%;
       margin-top: 20px;
+
       p {
         font-size: 1.2em;
         margin-left: 2%;
@@ -52,33 +53,30 @@
         border-radius: 15px;
       }
     }
-    
-    .link{
+
+    button {
       display: flex;
-      text-align: center;
-      width: 150%;
+      justify-content: center;
+      width: 100%;
+      padding: 10px;
       margin-top: 40px;
       margin-bottom: -40px;
-      text-decoration: none;
-      button{
-        border: none;
-        outline: none;  
-        height: 55px;
-        width: 150%;
-        background-color: #4F362F;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color: #fff;
-        font-size: 1.5em;
-        font-weight: 500;
-        border-radius: 15px;
-        box-shadow: 0px 0px 10px gray ;
-        transition: 0.3s;
+      border: none;
+      outline: none;
+      background-color: #4F362F;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #fff;
+      font-size: 1.5em;
+      font-weight: 500;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px gray;
+      transition: 0.3s;
 
-      }
-      button:hover{
-        box-shadow: 0px 0px 15px rgb(55, 13, 13) ;
-        font-size: 1.55em;
-      }
+    }
+
+    button:hover {
+      box-shadow: 0px 0px 15px rgb(55, 13, 13);
+      font-size: 1.55em;
     }
   }
 }

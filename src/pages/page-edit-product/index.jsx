@@ -5,12 +5,12 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 export default function EditProduct() {
-  const { id } = useParams(); 
-  const navigate = useNavigate(); 
+  const { id } = useParams();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
+  const navigate = useNavigate();
 
   async function carregarProduto() {
     try {

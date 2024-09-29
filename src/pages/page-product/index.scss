@@ -7,10 +7,13 @@
 .page-product {
   display: flex;
 
+  .sidebar{
+    position: fixed;
+  }
   .rigth-product {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
+    margin-left: 30%;
     padding: 20px;
 
     .descrissao-page {

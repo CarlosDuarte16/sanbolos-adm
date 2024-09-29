@@ -6,6 +6,7 @@ import AddProduct from './pages/page-add-product';
 import EditProduct from './pages/page-edit-product';
 import Products from './pages/page-product';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Profile from './pages/page-profile';
  
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <Route path='add-product' element={<AddProduct/>}/>
         <Route path='/edit-product/:id' element={<EditProduct/>}/>
         <Route path='products' element={<Products/>}/>
+        <Route path='/profile/:id' element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

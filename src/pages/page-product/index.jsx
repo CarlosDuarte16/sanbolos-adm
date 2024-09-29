@@ -21,7 +21,9 @@ export default function Products() {
 
   return (
     <div className="page-product" >
-      <Sidebar />
+      <div className="sidebar">
+        <Sidebar />
+      </div>
       <div className="rigth-product">
         <div className="descrissao-page">
           <img src="/assets/image/mini-cake.png" alt="" />
@@ -50,4 +52,3 @@ export default function Products() {
     </div>
   );
 }
-

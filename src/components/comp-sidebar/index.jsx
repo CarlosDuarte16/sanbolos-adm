@@ -12,7 +12,7 @@ export default function Sidebar() {
         <img src="/assets/image/luiza-profile.jpg" alt="" />
         <div className="double-text">
           <h3>Anna Luiza</h3>
-          <Link className='link-myprofile'>
+          <Link to="/profile/:id" className='link-myprofile'>
             <div className="text-arrow">
               <p>Meu perfil</p>
               <img src="/assets/image/arrow-right.png" alt="" />
@@ -37,7 +37,7 @@ export default function Sidebar() {
       </div>
       <div className="help-exit">
         <Link className='help'>Ajuda</Link>
-        <Link className='exit'>Sair</Link>
+        <Link to="/" className='exit'>Sair</Link>
       </div>
 
     </div>
