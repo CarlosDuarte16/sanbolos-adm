@@ -6,13 +6,13 @@ import axios from 'axios';
 
 import { useState } from 'react';
 
-export default function AddProduct() {
+export default function EditProduct() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
 
- 
+
   async function salvarBD() {
     const salvador = {
       "nome": title,
@@ -29,12 +29,12 @@ export default function AddProduct() {
   }
 
   return (
-    <div className="page-add-product" >
+    <div className="page-edit-product" >
       <Sidebar />
       <div className="rigth-add">
         <div className="descrissao-page">
           <img src="/assets/image/mini-cake.png" alt="" />
-          <h1>Novo Produto</h1>
+          <h1>Edição Produto</h1>
         </div>
         <div className="inputs">
           <div className="input-title-product">

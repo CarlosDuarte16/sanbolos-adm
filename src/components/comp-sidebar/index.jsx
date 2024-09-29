@@ -22,15 +22,15 @@ export default function Sidebar() {
       </div>
 
       <div className="options-page">
-        <Link className='link-img'>
+        <Link className='link-img' to="/products">
           <div className="div-link">
-            <img src="/assets/image/mini-cake.png" alt="" />
+            <img src="/assets/image/cupcake.png" alt="" />
             <h4>Meus Produtos</h4>
           </div>
         </Link>
         <Link className='link-img'>
           <div className="div-link">
-            <img src="/assets/image/mini-cake.png" alt="" />
+            <img src="/assets/image/cupcake.png" alt="" />
             <h4>Controle de pedidos</h4>
           </div>
         </Link>
