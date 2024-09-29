@@ -14,21 +14,21 @@ export default function EditProduct() {
 
   async function carregarProduto() {
     try {
-      const url = `http://localhost:5001/api/consultarProduto/${id}`; // Usar o endpoint correto
+      const url = `http://localhost:5001/api/consultarProduto/${id}`;
       let resp = await axios.get(url);
 
       const produto = resp.data;
       setTitle(produto.nome);
       setDescription(produto.descrição);
       setPrice(produto.preço);
-      setDisponivel(produto.disponibilidade); // Verifique o nome da propriedade no seu banco de dados
+      setDisponivel(produto.disponibilidade);
     } catch (error) {
       console.error('Erro ao carregar o produto', error);
     }
   }
 
   useEffect(() => {
-    carregarProduto(); // Carrega o produto ao montar o componente
+    carregarProduto();
   }, [id]);
 
   async function salvarBD() {
@@ -41,7 +41,7 @@ export default function EditProduct() {
     };
 
     try {
-      const url = `http://localhost:5001/api/alterarProduto/${id}`; // Usar o ID correto
+      const url = `http://localhost:5001/api/alterarProduto/${id}`;
       await axios.put(url, produto);
       alert(`Produto ${title} alterado com sucesso!`);
     } catch (error) {
@@ -55,10 +55,10 @@ export default function EditProduct() {
 
     if (confirmar) {
       try {
-        const url = `http://localhost:5001/api/removerProduto/${id}`; // Endpoint para deletar
+        const url = `http://localhost:5001/api/removerProduto/${id}`;
         await axios.delete(url);
         alert(`Produto ${title} deletado com sucesso!`);
-        navigate('/products'); // Redireciona para a lista de produtos
+        navigate('/products');
       } catch (error) {
         console.error('Erro ao deletar o produto', error);
       }
