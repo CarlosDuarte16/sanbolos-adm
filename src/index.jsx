@@ -7,6 +7,7 @@ import EditProduct from './pages/page-edit-product';
 import Products from './pages/page-product';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Profile from './pages/page-profile';
+import Order from './pages/page-order';
  
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path='/edit-product/:id' element={<EditProduct/>}/>
         <Route path='products' element={<Products/>}/>
         <Route path='/profile/:id' element={<Profile/>}/>
+        <Route path='/page-order' element={<Order/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
