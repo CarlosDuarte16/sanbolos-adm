@@ -23,7 +23,7 @@
     }
 
     h1 {
-      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       color: #fff;
       font-size: 1.8em;
       font-weight: 200;
@@ -34,33 +34,40 @@
     display: flex;
     margin-left: 5%;
 
-    img {
-      width: auto;
-      height: 4em;
-      border-radius: 50px;
-    }
-
-    h3 {
-      margin-left: 10%;
-      font-size: 1.4em;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: #fff;
+    .profile-description {
+      display: flex;
       width: 100%;
-      margin-top: 10px;
+      img {
+        width: auto;
+        height: 4em;
+        border-radius: 50px;
+      } 
+
+      h2 {
+        margin-left: 5%;
+        font-size: 1.4em;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #fff;
+        width: 100%;
+        margin-top: 10px;
+      }
     }
 
     .link-myprofile {
       text-decoration: none;
+      width: 100%;
 
       .text-arrow {
         display: flex;
-        gap: 5px;
         align-items: center;
-        margin-left: 10%;
+        margin-left: -290%;
+        margin-top: 40px;
+        margin-bottom: 0px;
 
         img {
           width: auto;
-          height: 0.8em;
+          height: 0.7em;
+          margin-left: -70%;
           margin-top: 4px;
           filter: invert(1);
         }
@@ -69,6 +76,7 @@
           font-size: 0.9em;
           font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           color: #fff;
+          width: 100%;
         }
       }
     }
@@ -111,13 +119,14 @@
   }
 
   .help-exit {
-    display: flex;  
+    display: flex;
     flex-direction: column;
     margin-top: 250px;
     margin-left: 15%;
     gap: 5px;
 
-    .help, .exit {
+    .help,
+    .exit {
       text-decoration: none;
       color: #fff;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
