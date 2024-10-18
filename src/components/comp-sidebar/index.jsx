@@ -7,19 +7,6 @@ import { useState, useEffect } from 'react';
 export default function Sidebar() {
   const [consulProduct, setConsulProduct] = useState([]);
 
-  async function buscar() {
-    
-    const url = `http://localhost:5001/api/consultarPerfil/`;
-    let resp = await axios.get(url);
-    setConsulProduct(resp.data);
-  }
-
-  useEffect(() => {
-    buscar();
-  }, []);
-
-
-
   return (
     <div className="comp-sidebar" >
       <div className="logo-name">
