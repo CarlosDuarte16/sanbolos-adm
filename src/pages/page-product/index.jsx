@@ -1,16 +1,14 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import Sidebar from '../../components/comp-sidebar';
-
 import axios from 'axios';
-
 import { useState, useEffect } from 'react';
 
 export default function Products() {
   const [consulProduct, setConsulProduct] = useState([]);
 
   async function buscar() {
-    const url = 'http://localhost:5001/api/consultarProduto';
+    const url = 'http://localhost:5001/api/consultarProduto/';
     let resp = await axios.get(url);
     setConsulProduct(resp.data);
   }

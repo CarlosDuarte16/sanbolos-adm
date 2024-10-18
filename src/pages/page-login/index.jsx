@@ -1,33 +1,37 @@
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import axios from 'axios';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
+  const [nome, setNome] = useState('');
   const [senha, setSenha] = useState('');
-  const [perfil, setPerfil] = useState([]);
   const navigate = useNavigate();
 
-    async function buscarPerfis() {
-      const url = 'http://localhost:5001/api/consultarPerfil';
-      let resp = await axios.get(url);
-      setPerfil(resp.data);
-    }
-  
-    useEffect(() => {
-      buscarPerfis();
-    }, []);
-  
-    function Access_login() {
-      const perfilEncontrado = perfil.find(perfil => perfil.email === email && perfil.senha === senha);
-  
-      if (perfilEncontrado) {
-        navigate("/products");
-      } else {
-        alert("E-mail ou senha incorretos");
+  async function entrar() {
+    try {
+      const usuario = {
+        nome,
+        senha
       }
+  
+      const url = `http://localhost:5001/api/entrar/`
+      let resp = await axios.post(url, usuario)
+  
+      if (resp.data.erro !== undefined) {
+        alert(resp.data.erro)
+      } else {
+        localStorage.setItem('USUARIO', resp.data.token)
+        navigate('/products')
+      }
+    } catch (err) {
+      console.error("Erro ao fazer login:", err);
+      alert("Erro ao conectar ao servidor. Tente novamente mais tarde.");
     }
+  }
+  
+
+
   return (
     <div className="page-login" style={{ backgroundImage: `url('/assets/image/Banner-sanbolos.png')` }}>
       <div className="card-login">
@@ -36,8 +40,8 @@ export default function Login() {
           <p>E-mail</p>
           <input
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
           />
         </div>
         <div className="input">
@@ -48,7 +52,7 @@ export default function Login() {
             onChange={(e) => setSenha(e.target.value)}
           />
         </div>
-        <button onClick={Access_login}>Entrar</button>
+        <button onClick={entrar}>Entrar</button>
       </div>
     </div>
   );

@@ -1,6 +1,11 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+
+
 export default function Sidebar() {
+  const [consulProduct, setConsulProduct] = useState([]);
 
   return (
     <div className="comp-sidebar" >
@@ -9,9 +14,13 @@ export default function Sidebar() {
         <h1>SanBolos</h1>
       </div>
       <div className="profile-access">
-        <img src="/assets/image/luiza-profile.jpg" alt="" />
+        {consulProduct.map(item => (
+          <div key={item.id} className='profile-description'>
+              <img src="assets/image/luiza-profile.jpg" alt="" />
+              <h2>{item.nome}</h2>
+          </div>
+        ))}
         <div className="double-text">
-          <h3>Anna Luiza</h3>
           <Link to="/profile/:id" className='link-myprofile'>
             <div className="text-arrow">
               <p>Meu perfil</p>

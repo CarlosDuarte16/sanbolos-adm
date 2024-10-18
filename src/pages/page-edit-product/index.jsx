@@ -11,7 +11,7 @@ export default function EditProduct() {
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
   const navigate = useNavigate();
-
+ 
   async function carregarProduto() {
     try {
       const url = `http://localhost:5001/api/consultarProduto/${id}`;

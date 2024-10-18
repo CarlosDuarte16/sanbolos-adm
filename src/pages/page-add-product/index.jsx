@@ -37,12 +37,12 @@ export default function AddProduct() {
           <h1>Novo Produto</h1>
         </div>
         <div className="inputs">
-          <div className="input-title-product">
+          <div className="input-title-product"> 
             <h3>Titulo do Produto</h3>
             <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
           </div>
           <div className="input-description-product">
-            <h3>Descrissão</h3>
+            <h3>Descrição</h3>
             <textarea value={description} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
           </div>
           <div className="input_price-input-boolean">
