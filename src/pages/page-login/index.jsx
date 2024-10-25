@@ -2,11 +2,14 @@ import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState} from 'react';
 import axios from 'axios';
+import toast from 'react-hot-toast';
+
 
 export default function Login() {
   const [nome, setNome] = useState('');
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
+
 
   async function entrar() {
     try {
@@ -19,7 +22,7 @@ export default function Login() {
       let resp = await axios.post(url, usuario)
   
       if (resp.data.erro !== undefined) {
-        alert(resp.data.erro)
+        toast.error(resp.data.erro)
       } else {
         localStorage.setItem('USUARIO', resp.data.token)
         navigate('/products')
@@ -37,7 +40,7 @@ export default function Login() {
       <div className="card-login">
         <h2>Log In</h2>
         <div className="input">
-          <p>E-mail</p>
+          <p>Usuário</p>
           <input
             type="text"
             value={nome}

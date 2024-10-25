@@ -7,6 +7,7 @@ import EditProduct from './pages/page-edit-product';
 import Products from './pages/page-product';
 import AddOrder from './pages/page-add-order';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -17,7 +18,9 @@ root.render(
         <Route path='/edit-product/:id' element={<EditProduct/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/add-order' element={<AddOrder/>}/>
+        
       </Routes>
     </BrowserRouter>
+    <Toaster/>
   </React.StrictMode>
 );

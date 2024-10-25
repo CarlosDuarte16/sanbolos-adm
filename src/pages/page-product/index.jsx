@@ -14,7 +14,7 @@ export default function Products() {
   }
 
   useEffect(() => {
-    buscar();
+    buscar(); 
   }, []);
 
   return (

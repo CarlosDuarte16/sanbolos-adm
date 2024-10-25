@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/comp-sidebar';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 export default function EditProduct() {
   const { id } = useParams();
@@ -43,21 +44,21 @@ export default function EditProduct() {
     try {
       const url = `http://localhost:5001/api/alterarProduto/${id}`;
       await axios.put(url, produto);
-      alert(`Produto ${title} alterado com sucesso!`);
+      toast.success(`Produto ${title} alterado com sucesso!`);
     } catch (error) {
       console.error('Erro ao alterar o produto', error);
-      alert('Erro ao alterar o produto.');
+      toast.error('Erro ao alterar o produto.');
     }
   }
 
   async function deletarProduto() {
-    const confirmar = window.confirm('Tem certeza que deseja excluir este produto?');
+    const confirmar = toast.confirm('Tem certeza que deseja excluir este produto?');
 
     if (confirmar) {
       try {
         const url = `http://localhost:5001/api/removerProduto/${id}`;
         await axios.delete(url);
-        alert(`Produto ${title} deletado com sucesso!`);
+        toast.success(`Produto ${title} deletado com sucesso!`);
         navigate('/products');
       } catch (error) {
         console.error('Erro ao deletar o produto', error);

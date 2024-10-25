@@ -5,6 +5,7 @@ import Sidebar from '../../components/comp-sidebar';
 import axios from 'axios';
 
 import { useState, } from 'react';
+import toast from 'react-hot-toast';
 
 export default function AddProduct() {
   const [title, setTitle] = useState('');
@@ -25,7 +26,7 @@ export default function AddProduct() {
     const url = 'http://localhost:5001/api/inserirProduto';
     let resp = await axios.post(url, salvador);
     navigate('/products');
-    alert(`Pessoa adicionada no BD. Id: ${resp.data.novoId}`)
+    toast.success(`Pessoa adicionada no BD. Id: ${resp.data.novoId}`)
   }
 
   return (
