@@ -4,6 +4,7 @@
 
 .page-edit-product {
   display: flex;
+
   .rigth-add {
     display: flex;
     flex-direction: column;
@@ -38,6 +39,7 @@
       margin-left: -80%;
       width: 100%;
       gap: 20px;
+
       .input-nome_cliente {
         display: flex;
         flex-direction: column;
@@ -81,19 +83,20 @@
       .first-input_par {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 100px;
+        align-items: center;
         .input-whatsapp_cliente {
           display: flex;
           flex-direction: column;
           gap: 10px;
           width: 100%;
-  
+
           h2 {
             font-size: 1.1em;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-weight: 700;
           }
-  
+
           input {
             padding: 7px;
             width: 300%;
@@ -101,7 +104,7 @@
             border: 2px solid #AE5044;
             outline: none;
           }
-  
+
         }
 
         .input-forma_pagamento_cliente {
@@ -111,35 +114,94 @@
           margin-left: 70%;
 
           h2 {
+            font-size: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 700;
+            width: 200px;
+          }
+          
+          input {
+            padding: 7px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid #AE5044;
+            outline: none;
+          }
+        }
+        
+      }
+      .par-titulo-valor{
+        display: flex;
+        flex-direction: flex;
+        align-items: center;
+        gap: 90px;
+        .input-titulo_produto{
+
+          input {
+            padding: 7px;
+            gap: 12px;
+            width: 245px;
+            border-radius: 10px;
+            border: 2px solid #AE5044;
+            outline: none;
+          }
+          h2 {
             font-size: 1.1em;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-weight: 700;
             width: 100%;
           }
-  
+        }
+
+        .input-valor_produto{
           input {
             padding: 7px;
-            width: 128%;
+            gap: 12px;
+            width: 180px;
             border-radius: 10px;
             border: 2px solid #AE5044;
             outline: none;
           }
+          h2 {
+            font-size: 18px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 700;
+            width: 100%;
           }
+        }
+        }
+        .input-quantidade_produto{
+          input {
+            padding: 7px;
+            gap: 12px;
+            width: 295px;
+            border-radius: 10px;
+            border: 2px solid #AE5044;
+            outline: none;
+          }
+          h2 {
+            font-size: 18px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 700;
+            width: 100%;
+          }
+        }
       }
+
 
       .buttons-save-cancel {
         display: flex;
-        gap: 15px;
-        margin-left: 80%;
-        margin-top: 50px;
+        gap: 30px;
+        margin-left: 150px;
         width: 100%;
         align-items: center;
         text-align: center;
+        margin-top: 100px;
 
         .button-link {
           width: 200%;
           cursor: pointer;
-          padding: 8px;
+          padding: 10px;
           background-color: #4F362F;
           color: #fff;
           font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -159,4 +221,3 @@
       }
     }
   }
-}
