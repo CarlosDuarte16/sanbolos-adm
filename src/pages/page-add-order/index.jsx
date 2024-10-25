@@ -38,6 +38,9 @@ export default function AddOrder() {
               <input type="text" />
             </div>
           </div>
+
+          <div className='par-titulo-valor'>
+            
           <div className="input-titulo_produto">
             <h2>Titulo do Produto</h2>
             <input type="text" />
@@ -48,17 +51,22 @@ export default function AddOrder() {
               <h2>Valor</h2>
               <input type="text" />
             </div>
+
+          </div>
+        </div>
+            
             <div className="input-quantidade_produto">
               <h2>Quantidade</h2>
               <input type="text" />
             </div>
           </div>
-        </div>
-      </div>
+        
       <div className="buttons-save-cancel">
         <button className='button-link'>Salvar</button>
         <button className='button-link'>Apagar</button>
         <Link className='button-link' to='/products'>Cancelar</Link>
+      </div>
+
       </div>
     </div>
   );
