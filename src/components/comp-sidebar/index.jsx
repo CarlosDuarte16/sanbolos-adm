@@ -13,23 +13,6 @@ export default function Sidebar() {
         <img src="assets/image/logo.png" alt="" />
         <h1>SanBolos</h1>
       </div>
-      <div className="profile-access">
-        {consulProduct.map(item => (
-          <div key={item.id} className='profile-description'>
-              <img src="assets/image/luiza-profile.jpg" alt="" />
-              <h2>{item.nome}</h2>
-          </div>
-        ))}
-        <div className="double-text">
-          <Link to="/profile/:id" className='link-myprofile'>
-            <div className="text-arrow">
-              <p>Meu perfil</p>
-              <img src="/assets/image/arrow-right.png" alt="" />
-            </div>
-          </Link>
-        </div>
-      </div>
-
       <div className="options-page">
         <Link className='link-img' to="/products">
           <div className="div-link">

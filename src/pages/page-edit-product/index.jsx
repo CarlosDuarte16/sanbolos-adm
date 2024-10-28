@@ -52,7 +52,7 @@ export default function EditProduct() {
   }
 
   async function deletarProduto() {
-    const confirmar = toast.confirm('Tem certeza que deseja excluir este produto?');
+    const confirmar = window.confirm('Tem certeza que deseja excluir este produto?');
 
     if (confirmar) {
       try {
