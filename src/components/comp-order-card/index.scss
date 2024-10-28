@@ -1,0 +1,73 @@
+.cards-page{
+  padding-top: 100px;
+  display:  flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100px;
+  gap: 30px;
+  
+    .card{
+      display:  flex;
+          justify-content: space-around;
+          flex-direction: column;
+          border: 1px solid #AE5044;
+          height: 200px;
+          top: 172px;
+          left: 322px;
+          padding: 20px;
+          border-radius: 10px;
+          margin-left: 20px;
+          font-family: Montserrat;
+
+          .dados-toopo{
+            display:  flex;
+      flex-direction: row;
+      padding-left: 20px;
+      font-family: Montserrat;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 12.19px;
+      text-align: center;
+      gap: 10px;
+
+h6{
+  padding-right: 100px;
+}
+
+          }
+         
+
+   .dados{
+      display:  flex;
+      flex-direction: row;
+      gap: 100px;
+      padding-left: 20px;
+      font-family: Montserrat;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 12.19px;
+      text-align: center;
+
+   }
+
+     .usuario{
+      display:  flex;
+      flex-direction: row;
+      gap: 50px;
+      height: 22px;
+      top: 47px;
+      left: 9px;
+      gap: 0px;
+      opacity: 0px;
+      color: black;
+
+     
+
+     
+
+     }
+
+    }
+  }
+
+  
