@@ -1,11 +1,12 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/comp-sidebar';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 export default function Products() {
   const [consulProduct, setConsulProduct] = useState([]);
+  const navigate = useNavigate();
 
   async function buscar() {
     const url = 'http://localhost:5001/api/consultarProduto/';
@@ -14,7 +15,10 @@ export default function Products() {
   }
 
   useEffect(() => {
-    buscar(); 
+    if (localStorage.getItem('USUARIO') == undefined){
+      navigate('/')
+    }
+      buscar();
   }, []);
 
   return (
@@ -33,8 +37,6 @@ export default function Products() {
             </div>
           </Link>
         </div>
-
-
         <div className="cards_products">
           {consulProduct.map(item => (
             <Link to={`/edit-product/${item.id}`} key={item.id} className='link-card'>

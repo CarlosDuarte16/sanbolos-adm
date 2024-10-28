@@ -73,7 +73,7 @@ export default function EditProduct() {
         <div className="descrissao-page">
           <img src="/assets/image/mini-cake.png" alt="" />
           <h1>Editar Produto</h1>
-        </div>
+        </div> 
         <div className="inputs">
           <div className="input-title-product">
             <h3>Título do Produto</h3>

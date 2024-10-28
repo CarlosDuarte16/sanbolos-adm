@@ -21,7 +21,6 @@ root.render(
         <Route path='/products' element={<Products/>}/>
         <Route path='/add-order' element={<AddOrder/>}/>
         <Route path='/orders' element={<Order/>}/>
-        
       </Routes>
     </BrowserRouter>
     <Toaster/>
