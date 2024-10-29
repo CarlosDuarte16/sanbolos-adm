@@ -10,19 +10,25 @@ Modal.setAppElement("#root")
 
 export default function Order() {
 
-  const [openPopup, setOpenPopup] = useState(false)
-  const [orders, setOrders] = useState([])
-  const [editingOrder, setEditingOrder] = useState(null)
-  const [nome, setNome] = useState('')
-  const [data, setData] = useState('')
-  const [produto, setProduto] = useState("")
-  const [quantidade, setQuantidade] = useState("")
-  const [telefone, setTelefone] = useState("")
-  const [whatzapp, setWhatzapp] = useState('')
-  const [endereco, setEndereco] = useState('')
+
+
+  const [openPopup, setOpenPopup]=useState(false)
+  const [orders,setOrders]=useState([])
+
+  const [editingOrder,setEditingOrder] = useState(null)
+  
+  const [nome,setNome]=useState('')
+  const [data,setData]=useState('')
+  const [produto,setProduto] = useState("")
+  const [quantidade,setQuantidade] = useState("")
+  const [telefone,setTelefone]=useState("")
+  const [whatzapp,setWhatzapp]=useState('')
+  const [endereco,setEndereco]=useState('')
   const [formaDePagamento, setFormaDePagamento] = useState("")
-  const [valorTotal, setValorTotal] = useState('')
-  const [status, setStatus] = useState("Em processo...")
+  const [valorTotal,setValorTotal]=useState('')
+  const [status,setStatus]=useState("Em processo...")
+
+
 
   function openModal(orderIndex) {
     setOpenPopup(true)
@@ -188,9 +194,10 @@ const Styles = {
 </div>
 </div>
                 <div className='botoes'>
-                  <p className='editar' onClick={salvarPedido}>Salvar Alterações</p>
-                  <p className='apagar' onClick={apagarPedido}>Apagar Pedido</p>
-                  <p className='concluido' onClick={marcarConcluido}>Marcar como Concluído</p>
+                <p className='apagar' onClick={apagarPedido}>Apagar Pedido</p>
+                           
+                  <p className='concluido' onClick={marcarConcluido}>Marcar Concluído</p>
+                  <p className='editar' onClick={salvarPedido}>Editar Detalhes</p> 
                   
 
 

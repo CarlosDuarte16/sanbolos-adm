@@ -11,7 +11,7 @@ export function ControleCard(props) {
       <div className='dados-toopo'>
         <h6>{props.nome}</h6>
         <p className=''>Data:</p>
-        <p>{props.data}</p>
+        <p>12/06/2024</p>
       </div>
       <div className='usuario'>
         <h4>Produto:</h4>
