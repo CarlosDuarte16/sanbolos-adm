@@ -16,7 +16,7 @@ export default function Order() {
   const [orders,setOrders]=useState([])
 
   const [editingOrder,setEditingOrder] = useState(null)
-  
+
   const [nome,setNome]=useState('')
   const [data,setData]=useState('')
   const [produto,setProduto] = useState("")
@@ -121,7 +121,7 @@ const Styles = {
             <img src="/assets/image/mini-cake.png" alt="" />
             <h1>Controle de Pedidos</h1>
             <div className='adicionar'>
-              <p>Adicionar Pedido</p>
+              <p>Adicionar</p>
               <img src="/assets/image/lapis.png" alt="" />
               
             </div>
