@@ -4,9 +4,19 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 export default function Sidebar() {
-  const [consulProduct, setConsulProduct] = useState([]);
+  const [consulUsuario, setConsulUsuario] = useState([]);
   const navigate = useNavigate()
   const [token, setToken] = useState(null);
+
+  async function usuario() {
+    const url = 'http://localhost:5001/api/consultarUsuario/';
+    let resp = await axios.get(url);
+    setConsulUsuario(resp.data);
+  }
+  useEffect(() => {
+    usuario()
+  }, []);
+  
 
   async function sair() {
     localStorage.setItem('USUARIO', null)
@@ -29,17 +39,19 @@ export default function Sidebar() {
         <img src="assets/image/logo.png" alt="" />
         <h1>SanBolos</h1>
       </div>
+      <div className='profile'>
+        <img src="assets/image/person.png" alt="" />
+          {consulUsuario.map(item => (
+            <div className=''>
+              <h3>{item.nome}</h3>
+            </div>
+          ))}
+      </div>
       <div className="options-page">
         <Link className='link-img' to="/products">
           <div className="div-link">
             <img src="/assets/image/cupcake.png" alt="" />
             <h4>Meus Produtos</h4>
-          </div>
-        </Link>
-        <Link className='link-img'>
-          <div className="div-link">
-            <img src="/assets/image/cupcake.png" alt="" />
-            <h4>Controle de pedidos</h4>
           </div>
         </Link>
       </div>
