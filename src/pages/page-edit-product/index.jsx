@@ -12,22 +12,23 @@ export default function EditProduct() {
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
   const navigate = useNavigate();
- 
+  
+
   async function carregarProduto() {
     try {
       const url = `http://localhost:5001/api/consultarProduto/${id}`;
       let resp = await axios.get(url);
-
+  
       const produto = resp.data;
       setTitle(produto.nome);
       setDescription(produto.descrição);
-      setPrice(produto.preço);
+      setPrice(produto.valor);
       setDisponivel(produto.disponibilidade);
     } catch (error) {
       console.error('Erro ao carregar o produto', error);
     }
   }
-
+  
   useEffect(() => {
     carregarProduto();
   }, [id]);
@@ -42,9 +43,14 @@ export default function EditProduct() {
     };
 
     try {
-      const url = `http://localhost:5001/api/alterarProduto/${id}`;
-      await axios.put(url, produto);
-      toast.success(`Produto ${title} alterado com sucesso!`);
+      if(title == '' && description == '' && price == ''){
+        toast.error("Precisa preencher todos os campos!!"); 
+      }
+      else{
+        const url = `http://localhost:5001/api/alterarProduto/${id}`;
+        await axios.put(url, produto);
+        toast.success(`Produto ${title} alterado com sucesso!`);
+      }
     } catch (error) {
       console.error('Erro ao alterar o produto', error);
       toast.error('Erro ao alterar o produto.');
@@ -77,16 +83,16 @@ export default function EditProduct() {
         <div className="inputs">
           <div className="input-title-product">
             <h3>Título do Produto</h3>
-            <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
+            <input placeholder={title} type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
           </div>
           <div className="input-description-product">
             <h3>Descrição</h3>
-            <textarea value={description} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
+            <textarea value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
           </div>
           <div className="input_price-input-boolean">
             <div className="input-price-product">
               <h3>Preço</h3>
-              <input value={price} onChange={e => setPrice(e.target.value)} type="text" />
+              <input value={price} maxLength={4} onChange={e => setPrice(e.target.value)} type="text" />
             </div>
             <div className="input-availability-product">
               <h3>Disponível</h3>

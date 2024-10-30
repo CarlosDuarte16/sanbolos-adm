@@ -42,6 +42,7 @@ export default function Login() {
         <div className="input">
           <p>Usuário</p>
           <input
+            maxLength={25}
             type="text"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
@@ -50,6 +51,7 @@ export default function Login() {
         <div className="input">
           <p>Senha</p>
           <input
+            maxLength={8}
             type="password"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}

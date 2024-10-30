@@ -4,7 +4,7 @@ import Sidebar from '../../components/comp-sidebar';
 
 import axios from 'axios';
 
-import { useState, } from 'react';
+import { useEffect, useState, } from 'react';
 import toast from 'react-hot-toast';
 
 export default function AddProduct() {
@@ -12,22 +12,29 @@ export default function AddProduct() {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
-  const navigate = useNavigate(); 
- 
-  async function salvarBD() {
-    const salvador = {
-      "nome": title,
-      "descrição":description,
-      "preço": price,
-      "image": title,
-      "disponibilidade":disponivel
-    }
+  const navigate = useNavigate();
 
-    const url = 'http://localhost:5001/api/inserirProduto';
-    let resp = await axios.post(url, salvador);
-    navigate('/products');
-    toast.success(`Pessoa adicionada no BD. Id: ${resp.data.novoId}`)
+  async function salvarBD() {
+      const salvador = {
+        "nome": title,
+        "descrição": description,
+        "preço": price,
+        "image": title,
+        "disponibilidade": disponivel
+      }
+      
+      if(title == '' && description == '' && price == ''){
+        toast.error("Precisa preencher todos os campos!!"); 
+      }
+      else{
+        const url = 'http://localhost:5001/api/inserirProduto';
+        let resp = await axios.post(url, salvador);
+        navigate('/products');  
+        toast.success(`Produto adicionado.`)  
+      }
+
   }
+
 
   return (
     <div className="page-add-product" >
@@ -38,18 +45,18 @@ export default function AddProduct() {
           <h1>Novo Produto</h1>
         </div>
         <div className="inputs">
-          <div className="input-title-product"> 
+          <div className="input-title-product">
             <h3>Titulo do Produto</h3>
-            <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
-          </div>
+            <input type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
+          </div> 
           <div className="input-description-product">
             <h3>Descrição</h3>
-            <textarea value={description} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
+            <textarea value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
           </div>
           <div className="input_price-input-boolean">
             <div className="input-price-product">
               <h3>Preço</h3>
-              <input value={price} onChange={e => setPrice(e.target.value)} type="text" />
+              <input value={price} maxLength={4} onChange={e => setPrice(e.target.value)} type="text" />
             </div>
             <div className="input-availability-product">
               <h3>Disponivel</h3>

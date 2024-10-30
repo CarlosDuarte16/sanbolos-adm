@@ -125,6 +125,11 @@
     margin-left: 15%;
     gap: 5px;
 
+    .exit{
+      background-color: transparent;
+      border: none;
+      margin-left: -90%;
+    }
     .help,
     .exit {
       text-decoration: none;

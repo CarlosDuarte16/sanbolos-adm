@@ -1,11 +1,27 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-
 export default function Sidebar() {
   const [consulProduct, setConsulProduct] = useState([]);
+  const navigate = useNavigate()
+  const [token, setToken] = useState(null);
+
+  async function sair() {
+    localStorage.setItem('USUARIO', null)
+    navigate('/')
+  }
+
+  useEffect(() => {
+    let token = localStorage.getItem('USUARIO')
+    setToken(token)
+
+    if (token == 'null') {
+      navigate('/')
+    }
+  }, [])
+
 
   return (
     <div className="comp-sidebar" >
@@ -29,7 +45,7 @@ export default function Sidebar() {
       </div>
       <div className="help-exit">
         <Link className='help'>Ajuda</Link>
-        <Link to="/" className='exit'>Sair</Link>
+        <button onClick={sair} className='exit'>Sair</button>
       </div>
 
     </div>
