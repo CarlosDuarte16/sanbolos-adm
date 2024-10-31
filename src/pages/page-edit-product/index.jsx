@@ -14,6 +14,7 @@ export default function EditProduct() {
   const navigate = useNavigate();
   
 
+
   async function carregarProduto() {
     try {
       const url = `http://localhost:5001/api/consultarProduto/${id}`;
@@ -46,10 +47,14 @@ export default function EditProduct() {
       if(title == '' && description == '' && price == ''){
         toast.error("Precisa preencher todos os campos!!"); 
       }
+      if(price <= 0){
+        toast.error("Digite um valor maior que 0!!")
+      }
       else{
         const url = `http://localhost:5001/api/alterarProduto/${id}`;
         await axios.put(url, produto);
         toast.success(`Produto ${title} alterado com sucesso!`);
+        navigate('/products')
       }
     } catch (error) {
       console.error('Erro ao alterar o produto', error);

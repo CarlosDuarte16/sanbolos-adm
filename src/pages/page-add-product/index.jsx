@@ -14,6 +14,7 @@ export default function AddProduct() {
   const [disponivel, setDisponivel] = useState(false);
   const navigate = useNavigate();
 
+
   async function salvarBD() {
       const salvador = {
         "nome": title,
@@ -23,9 +24,14 @@ export default function AddProduct() {
         "disponibilidade": disponivel
       }
       
+
       if(title == '' && description == '' && price == ''){
         toast.error("Precisa preencher todos os campos!!"); 
       }
+      if(price <= 0){
+        toast.error("Digite um valor maior que 0!!")
+      }
+      
       else{
         const url = 'http://localhost:5001/api/inserirProduto';
         let resp = await axios.post(url, salvador);
@@ -56,7 +62,7 @@ export default function AddProduct() {
           <div className="input_price-input-boolean">
             <div className="input-price-product">
               <h3>Preço</h3>
-              <input value={price} maxLength={4} onChange={e => setPrice(e.target.value)} type="text" />
+              <input value={price} maxLength={6} onChange={e => setPrice(e.target.value)} type="text" />
             </div>
             <div className="input-availability-product">
               <h3>Disponivel</h3>

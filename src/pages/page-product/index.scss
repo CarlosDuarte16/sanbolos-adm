@@ -7,9 +7,10 @@
 .page-product {
   display: flex;
 
-  .sidebar{
+  .sidebar {
     position: fixed;
   }
+
   .rigth-product {
     display: flex;
     flex-direction: column;
@@ -57,7 +58,7 @@
     }
 
 
-    
+
 
     .cards_products {
       display: flex;
@@ -65,9 +66,10 @@
       margin-top: 40px;
       flex-wrap: wrap;
 
-      .link-card{
+      .link-card {
         text-decoration: none;
       }
+
       .card {
         transition: 0.5s;
         width: 200px;
@@ -103,17 +105,59 @@
   }
 
 
-  @media (max-width: 480px){
 
+  @media (min-width: 1200px) {
+    .page-product {
+      .sidebar {
+        width: 18%;
+      }
+
+      .rigth-product {
+        margin-left: 18%;
+        padding: 30px;
+        .descrissao-page {
+          margin-top: 100px;
+          gap: 40px;
+          h1 {
+            font-size: 2em;
+          }
+          .add .adicionar {
+            margin-left: 500%;
+            img {
+              height: 1.2em;
+            }
+            p {
+              font-size: 1em;
+            }
+          }
+        }
+        .cards_products {
+          gap: 60px;
+          .card {
+            width: 220px;
+            img {
+              height: 14em;
+            }
+            h3 {
+              font-size: 1.3em;
+            }
+            p {
+              font-size: 1.1em;
+            }
+          }
+        }
+      }
+    }
   }
-  @media (max-width: 480px){
-    
-  }
-  @media (max-width: 480px){
-    
-  }
+
+    @media (max-width: 768px) {
+      .sidebar{
+        position: fixed;
+        height: 100ev;
+      }
+    }
+
+  @media (max-width: 480px) {}
 
 
 }
-
-

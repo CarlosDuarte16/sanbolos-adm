@@ -56,7 +56,6 @@ export default function Sidebar() {
         </Link>
       </div>
       <div className="help-exit">
-        <Link className='help'>Ajuda</Link>
         <button onClick={sair} className='exit'>Sair</button>
       </div>
 
