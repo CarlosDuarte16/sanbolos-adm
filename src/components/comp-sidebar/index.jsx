@@ -9,7 +9,7 @@ export default function Sidebar() {
   const [token, setToken] = useState(null);
 
   async function usuario() {
-    const url = 'http://localhost:5001/api/consultarUsuario/';
+    const url = 'https://api-sanbolos.onrender.com/api/consultarUsuario/';
     let resp = await axios.get(url);
     setConsulUsuario(resp.data);
   }

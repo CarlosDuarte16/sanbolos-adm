@@ -17,7 +17,7 @@ export default function EditProduct() {
 
   async function carregarProduto() {
     try {
-      const url = `http://localhost:5001/api/consultarProduto/${id}`;
+      const url = `https://api-sanbolos.onrender.com/api/consultarProduto/${id}`;
       let resp = await axios.get(url);
   
       const produto = resp.data;
@@ -51,7 +51,7 @@ export default function EditProduct() {
         toast.error("Digite um valor maior que 0!!")
       }
       else{
-        const url = `http://localhost:5001/api/alterarProduto/${id}`;
+        const url = `https://api-sanbolos.onrender.com/api/alterarProduto/${id}`;
         await axios.put(url, produto);
         toast.success(`Produto ${title} alterado com sucesso!`);
         navigate('/products')
@@ -67,7 +67,7 @@ export default function EditProduct() {
 
     if (confirmar) {
       try {
-        const url = `http://localhost:5001/api/removerProduto/${id}`;
+        const url = `https://api-sanbolos.onrender.com/api/removerProduto/${id}`;
         await axios.delete(url);
         toast.success(`Produto ${title} deletado com sucesso!`);
         navigate('/products');

@@ -18,9 +18,10 @@ export default function Login() {
         senha
       }
   
-      const url = `http://localhost:5001/api/entrar/`
+      const url = `https://api-sanbolos.onrender.com/api/entrar/`
       let resp = await axios.post(url, usuario)
-  
+      console.log(resp)
+
       if (resp.data.erro !== undefined) {
         toast.error(resp.data.erro)
       } else {
@@ -57,7 +58,7 @@ export default function Login() {
             onChange={(e) => setSenha(e.target.value)}
           />
         </div>
-        <button onClick={entrar}>Entrar</button>
+        <button onClick={() => entrar}>Entrar</button>
       </div>
     </div>
   );
