@@ -18,7 +18,7 @@ export default function Login() {
         senha
       }
   
-      const url = `https://api-sanbolos.onrender.com/api/entrar/`
+      const url = `https://api-sanbolos.onrender.com/entrar/`
       let resp = await axios.post(url, usuario)
       console.log(resp)
 

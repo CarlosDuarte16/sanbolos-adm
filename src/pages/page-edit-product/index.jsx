@@ -17,7 +17,7 @@ export default function EditProduct() {
 
   async function carregarProduto() {
     try {
-      const url = `https://api-sanbolos.onrender.com/api/consultarProduto/${id}`;
+      const url = `https://api-sanbolos.onrender.com/consultarProduto/${id}`;
       let resp = await axios.get(url);
   
       const produto = resp.data;
