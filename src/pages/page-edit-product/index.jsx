@@ -51,7 +51,7 @@ export default function EditProduct() {
         toast.error("Digite um valor maior que 0!!")
       }
       else{
-        const url = `http://localhost:5001/alterarProduto/${id}`;
+        const url = `http://4.172.207.208:5012/alterarProduto/${id}`;
         await axios.put(url, produto);
         toast.success(`Produto ${title} alterado com sucesso!`);
         navigate('/products')
@@ -67,7 +67,7 @@ export default function EditProduct() {
 
     if (confirmar) {
       try {
-        const url = `http://localhost:5001/removerProduto/${id}`;
+        const url = `http://4.172.207.208:5012/removerProduto/${id}`;
         await axios.delete(url);
         toast.success(`Produto ${title} deletado com sucesso!`);
         navigate('/products');

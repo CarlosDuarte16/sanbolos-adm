@@ -19,7 +19,7 @@ export default function Login() {
         senha
       }
   
-      const url = `http://localhost:5001/entrar/`
+      const url = `http://4.172.207.208:5012/entrar/`
       let resp = await axios.post(url, usuario)
       console.log(resp)
 

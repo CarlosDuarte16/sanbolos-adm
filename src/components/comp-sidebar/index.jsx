@@ -9,7 +9,7 @@ export default function Sidebar() {
   const [token, setToken] = useState(null);
 
   async function usuario() {
-    const url = 'http://localhost:5001/consultarUsuario/';
+    const url = 'http://4.172.207.208:5012/consultarUsuario/';
     let resp = await axios.get(url);
     setConsulUsuario(resp.data);
   }

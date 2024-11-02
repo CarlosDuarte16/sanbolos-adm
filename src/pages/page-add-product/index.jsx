@@ -33,7 +33,7 @@ export default function AddProduct() {
       }
       
       else{
-        const url = 'http://localhost:5001/inserirProduto';
+        const url = 'http://4.172.207.208:5012/inserirProduto';
         let resp = await axios.post(url, salvador);
         navigate('/products');  
         toast.success(`Produto adicionado.`)  

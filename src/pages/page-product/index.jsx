@@ -9,7 +9,7 @@ export default function Products() {
   const navigate = useNavigate();
 
   async function buscar() {
-    const url = 'http://localhost:5001/consultarProduto/';
+    const url = 'http://4.172.207.208:5012/consultarProduto/';
     let resp = await axios.get(url);
     setConsulProduct(resp.data);
   }
