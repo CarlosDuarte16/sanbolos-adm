@@ -67,7 +67,7 @@ export default function EditProduct() {
 
     if (confirmar) {
       try {
-        const url = `https://api-sanbolos.onrender.com/api/removerProduto/${id}`;
+        const url = `http://localhost:5001/removerProduto/${id}`;
         await axios.delete(url);
         toast.success(`Produto ${title} deletado com sucesso!`);
         navigate('/products');
