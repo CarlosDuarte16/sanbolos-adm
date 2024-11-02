@@ -33,7 +33,7 @@ export default function AddProduct() {
       }
       
       else{
-        const url = 'https://api-sanbolos.onrender.com/inserirProduto';
+        const url = 'http://localhost:5001/inserirProduto';
         let resp = await axios.post(url, salvador);
         navigate('/products');  
         toast.success(`Produto adicionado.`)  

@@ -9,7 +9,7 @@ export default function Products() {
   const navigate = useNavigate();
 
   async function buscar() {
-    const url = 'https://api-sanbolos.onrender.com/consultarProduto/';
+    const url = 'http://localhost:5001/consultarProduto/';
     let resp = await axios.get(url);
     setConsulProduct(resp.data);
   }

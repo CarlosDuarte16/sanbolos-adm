@@ -12,13 +12,14 @@ export default function Login() {
 
 
   async function entrar() {
-    try {
+    
+    try { console.log("entrou")
       const usuario = {
         nome,
         senha
       }
   
-      const url = `https://api-sanbolos.onrender.com/entrar/`
+      const url = `http://localhost:5001/entrar/`
       let resp = await axios.post(url, usuario)
       console.log(resp)
 
@@ -58,7 +59,7 @@ export default function Login() {
             onChange={(e) => setSenha(e.target.value)}
           />
         </div>
-        <button onClick={() => entrar}>Entrar</button>
+        <button onClick={entrar}>Entrar</button>
       </div>
     </div>
   );
