@@ -25,13 +25,11 @@ export default function AddProduct() {
       }
       
 
-      if(title == '' && description == '' && price == ''){
-        toast.error("Precisa preencher todos os campos!!"); 
-      }
-      if(price <= 0){
-        toast.error("Digite um valor maior que 0!!")
-      }
-      
+      if (title.trim() === '' || description.trim() === '' || price.trim() === '') {
+        toast.error(`Precisa preencher todos os campos`);
+    } else if (isNaN(price) || parseFloat(price) <= 0) {
+        toast.error("O preço deve ser um número válido maior que zero!!");
+    }      
       else{
         const url = 'http://4.172.207.208:5012/inserirProduto';
         let resp = await axios.post(url, salvador);

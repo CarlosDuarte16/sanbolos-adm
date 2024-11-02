@@ -9,125 +9,111 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+}
 
+.card-login {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 50px;
+  border-radius: 15px;
+  width: 30%;
+  align-items: center;
+  margin: 10% auto;
+}
+
+.card-login h2 {
+  font-size: 2.4em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #bebcbc;
+}
+
+.card-login .input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.card-login .input p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+}
+
+.card-login .input input {
+  font-size: 1em;
+  outline: none;
+  padding: 15px;
+  background-color: transparent;
+  border: 1px solid #b2acac;
+  border-radius: 15px;
+}
+
+.card-login button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  background-color: #4F362F;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 500;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px gray;
+  transition: 0.3s;
+}
+
+.card-login button:hover {
+  box-shadow: 0px 0px 15px rgb(55, 13, 13);
+  font-size: 1.55em;
+}
+
+@media (max-width: 768px) {
   .card-login {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 100px;
-    border-radius: 15px;
-    width: 30%;
-    align-items: center;
-    margin-left: 60%;
-    margin-top: 10%;
-
-    h2 {
-      display: flex;
-      font-size: 2.4em;
-      margin-top: -100px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: #bebcbc;
-    }
-
-    .input {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      width: 180%;
-      margin-top: 20px;
-
-      p {
-        font-size: 1.2em;
-        margin-left: 2%;
-        margin-bottom: 10px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 700;
-      }
-
-      input {
-        font-size: 1em;
-        outline: none;
-        padding: 15px;
-        background-color: transparent;
-        border: 1px solid #b2acac;
-        border-radius: 15px;
-      }
-    }
-
-    button {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      padding: 10px;
-      margin-top: 40px;
-      margin-bottom: -40px;
-      border: none;
-      outline: none;
-      background-color: #4F362F;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: #fff;
-      font-size: 1.5em;
-      font-weight: 500;
-      border-radius: 15px;
-      box-shadow: 0px 0px 10px gray;
-      transition: 0.3s;
-
-    }
-
-    button:hover {
-      box-shadow: 0px 0px 15px rgb(55, 13, 13);
-      font-size: 1.55em;
-    }
+    width: 80%;
+    padding: 30px;
+    margin: 20% auto;
   }
 
-  @media (max-width: 1200px) {
-    .card-login {
-      width: 45%;
-    }
+  .card-login h2 {
+    font-size: 2em;
   }
 
-  @media (max-width: 1120px) {
-    .card-login {
-      width: 40%;
-    }
+  .card-login .input p {
+    font-size: 1em;
   }
 
-  @media (max-width: 1066px) {
-    .card-login {
-      width: 38%;
-    }
+  .card-login .input input {
+    padding: 10px;
+    font-size: 0.9em;
   }
 
-  @media (max-width: 768px) {
-    .card-login {
-      width: 80%;
+  .card-login button {
+    font-size: 1.2em;
+  }
+}
 
-      h2 {
-        font-size: 2.2em;
-      }
-    }
+
+@media (max-width: 480px) {
+  .card-login {
+    width: 90%;
+    padding: 20px;
   }
 
-  @media (max-width: 480px) {
-    .card-login {
-      display: flex;
-      margin-left: 60px;
-      justify-content: center;
-      input {
-        margin-left: -25px;
-        width: 120%;
-        height: 40px;
-      }
-      p{
-        margin-left: -25px;
-      }
-
-      h2 {
-        font-size: 1.5em;
-        margin-top: -80px;
-        margin-left: -25px;
-      }
-    }
+  .card-login h2 {
+    font-size: 1.8em;
   }
 
+  .card-login .input input {
+    padding: 8px;
+    font-size: 0.85em;
+  }
+
+  .card-login button {
+    font-size: 1em;
+    padding: 8px;
+  }
 }

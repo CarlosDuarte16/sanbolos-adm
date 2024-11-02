@@ -12,14 +12,14 @@ export default function EditProduct() {
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
   const navigate = useNavigate();
-  
+
 
 
   async function carregarProduto() {
     try {
-      const url = `http://localhost:5001/consultarProduto/${id}`;
+      const url = `http://4.172.207.208:5012/consultarProduto/${id}`;
       let resp = await axios.get(url);
-  
+
       const produto = resp.data;
       setTitle(produto.nome);
       setDescription(produto.descrição);
@@ -29,7 +29,7 @@ export default function EditProduct() {
       console.error('Erro ao carregar o produto', error);
     }
   }
-  
+
   useEffect(() => {
     carregarProduto();
   }, [id]);
@@ -44,13 +44,11 @@ export default function EditProduct() {
     };
 
     try {
-      if(title == '' && description == '' && price == ''){
-        toast.error("Precisa preencher todos os campos!!"); 
-      }
-      if(price <= 0){
-        toast.error("Digite um valor maior que 0!!")
-      }
-      else{
+      if (title.trim() === '' || description.trim() === '' || price.trim() === '') {
+        toast.error(`Precisa preencher todos os campos`);
+      } else if (isNaN(price) || parseFloat(price) <= 0) {
+        toast.error("O preço deve ser um número válido maior que zero!!");
+      } else {
         const url = `http://4.172.207.208:5012/alterarProduto/${id}`;
         await axios.put(url, produto);
         toast.success(`Produto ${title} alterado com sucesso!`);
@@ -84,7 +82,7 @@ export default function EditProduct() {
         <div className="descrissao-page">
           <img src="/assets/image/mini-cake.png" alt="" />
           <h1>Editar Produto</h1>
-        </div> 
+        </div>
         <div className="inputs">
           <div className="input-title-product">
             <h3>Título do Produto</h3>
