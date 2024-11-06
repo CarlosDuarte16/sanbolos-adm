@@ -9,6 +9,11 @@
   width: 50vh;
   height: 100vh;
   overflow-y: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
 
   .logo-name {
     display: flex;
@@ -23,29 +28,31 @@
     }
 
     h1 {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       color: #fff;
       font-size: 1.8em;
       font-weight: 200;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
   }
 
-  .profile{
+  .profile {
     display: flex;
     margin-left: 10%;
     margin-bottom: 10px;
     margin-top: 10px;
     gap: 15px;
     align-items: center;
-    img{
+
+    img {
       width: auto;
       height: 2.2em;
     }
 
-    h3{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    h3 {
       font-size: 1.2em;
-      color:#fff;
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
     }
   }
 
@@ -55,6 +62,7 @@
     margin-top: 35px;
     margin-left: 10%;
     margin-bottom: 20px;
+
     .link-img {
       text-decoration: none;
 
@@ -62,14 +70,15 @@
         margin-top: 10px;
         display: flex;
         gap: 10px;
+        align-items: center;
 
         h4 {
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           font-size: 1.2em;
           color: #fff;
           margin-top: 5px;
           font-weight: 500;
           transition: 0.3s;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
           &:hover {
             color: rgb(12, 242, 250);
@@ -79,7 +88,7 @@
         img {
           margin-top: 11px;
           width: auto;
-          height: 1em;
+          height: 1.2em;
         }
       }
     }
@@ -89,96 +98,48 @@
     display: flex;
     flex-direction: column;
     margin-top: 250px;
-    margin-left: 15%;
+    margin-left: -60%;
     gap: 5px;
 
     .exit {
       background-color: transparent;
       border: none;
-      margin-left: -90%;
       cursor: pointer;
-    }
-
-    .help,
-    .exit {
-      text-decoration: none;
       color: #fff;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-weight: 600;
       font-size: 1.2em;
     }
   }
 }
 
-
-.cards-page {
-  padding-top: 100px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100px;
-  gap: 30px;
-
-  .card {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    border: 1px solid #AE5044;
-    height: 200px;
-    top: 172px;
-    left: 322px;
-    padding: 20px;
-    border-radius: 10px;
-    margin-left: 20px;
-    font-family: Montserrat;
-
-    .dados-toopo {
-      display: flex;
-      flex-direction: row;
-      padding-left: 20px;
-      font-family: Montserrat;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 12.19px;
-      text-align: center;
-      gap: 10px;
-
-      h6 {
-        padding-right: 100px;
-      }
-
-    }
-
-
-    .dados {
-      display: flex;
-      flex-direction: row;
-      gap: 100px;
-      padding-left: 20px;
-      font-family: Montserrat;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 12.19px;
-      text-align: center;
-
-    }
-
-    .usuario {
-      display: flex;
-      flex-direction: row;
-      gap: 50px;
-      height: 22px;
-      top: 47px;
-      left: 9px;
-      gap: 0px;
-      opacity: 0px;
-      color: black;
-
-
-
-
-
-    }
-
+/* Responsividade */
+@media (max-width: 1024px) {
+  .comp-sidebar {
+    width: 20vh;
+  }
+}
+@media (max-width: 768px) {
+  .comp-sidebar {
+    width: 80%;
+    transform: translateX(-100%);
+  }
+  .comp-sidebar.open {
+    transform: translateX(0);
+  }
+  .exit{
+    margin-top: -10px;
+  }
+  .toggle-btn {
+    display: block;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    background-color: #4F362F;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
   }
 }

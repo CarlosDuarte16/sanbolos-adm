@@ -9,17 +9,22 @@ export default function Products() {
   const navigate = useNavigate();
 
   async function buscar() {
-    const url = 'http://4.172.207.208:5012/consultarProduto/';
-    let resp = await axios.get(url);
-    setConsulProduct(resp.data);
-  }
-
-  useEffect(() => {
-    if (localStorage.getItem('USUARIO') == undefined){
-      navigate('/')
+    try {
+      const url = `http://4.172.207.208:5012/consultarProduto/`;
+      const resp = await axios.get(url);
+      setConsulProduct(resp.data);
+    } catch (error) {
+      console.error("Erro ao buscar produtos:", error);
+      alert("Não foi possível carregar os produtos. Tente novamente mais tarde.");
     }
+  }
+  useEffect(() => {
+    if (localStorage.getItem('USUARIO') === undefined) {
+      navigate('/');
+    } else {
       buscar();
-  }, []);
+    }
+  }, [navigate]);
 
   return (
     <div className="page-product" >
@@ -38,15 +43,19 @@ export default function Products() {
           </Link>
         </div>
         <div className="cards_products">
-          {consulProduct.map(item => (
-            <Link to={`/edit-product/${item.id}`} key={item.id} className='link-card'>
-              <div className='card'>
-                <img src="/assets/image/bolo.jpeg" alt="" />
-                <h3>{item.nome}</h3>
-                <p>R${item.valor}</p>
-              </div>
-            </Link>
-          ))}
+          {consulProduct.length > 0 ? (
+            consulProduct.map(item => (
+              <Link to={`/edit-product/${item.id}`} key={item.id} className='link-card'>
+                <div className='card'>
+                  <img src={item.image} alt={item.nome} />
+                  <h3>{item.nome}</h3>
+                  <p>R${item.valor}</p>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <p>Nenhum produto encontrado.</p>
+          )}
         </div>
       </div>
     </div>

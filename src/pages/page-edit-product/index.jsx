@@ -17,7 +17,7 @@ export default function EditProduct() {
 
   async function carregarProduto() {
     try {
-      const url = `http://4.172.207.208:5012/consultarProduto/${id}`;
+      const url = `http://4.172.207.208:5012/consultarProdutos/${id}`;
       let resp = await axios.get(url);
 
       const produto = resp.data;
