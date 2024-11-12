@@ -28,7 +28,7 @@ export default function AddProduct() {
     }
   }
 
-  async function products_navigate(){
+  async function products_navigate() {
     navigate('/products')
   }
 
@@ -63,41 +63,39 @@ export default function AddProduct() {
   }
   return (
     <div className="page-add-product" >
-      <div className="sidebar">
-        <Sidebar />
-      </div>
-      <div className="rigth-add">
-        <div className="descrissao-page">
-          <img src="/assets/image/mini-cake.png" alt="" />
-          <h1>Novo Produto</h1>
+        <div className="sidebar">
+          <Sidebar />
         </div>
-        <div className="inputs">
-          <div className="input-title-product">
-            <h3>Titulo do Produto</h3>
-            <input type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
+        <div className="rigth-add">
+          <div className="descrissao-page">
+            <img src="/assets/image/mini-cake.png" alt="" />
+            <h1>Novo Produto</h1>
           </div>
-          <div className="input-description-product">
-            <h3>Descrição</h3>
-            <textarea value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
-          </div>
-          <div className="input_price-input-image">
-            <div className="input-price-product">
-              <h3>Preço</h3>
-              <input value={price} maxLength={6} onChange={e => setPrice(e.target.value)} type="text" />
+          <div className="inputs">
+            <div className="input-title-product">
+              <h3>Titulo do Produto</h3>
+              <input type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
             </div>
-            <div className="input-file-product">
-              <h3>Upload de Imagem</h3>
-              <div className="input-file">
-                <input type="file" accept='image/*' onChange={alterarImagem} />
+            <div className="input-description-product">
+              <h3>Descrição</h3>
+              <textarea value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
+            </div> 
+            <div className="input_price-input-image">
+              <div className="input-price-product">
+                <h3>Preço</h3>
+                <input className='price' value={price} maxLength={6} onChange={e => setPrice(e.target.value)} type="text" />
+              </div>
+              <div className="input-file-product">
+                <h3>Upload de Imagem</h3>
+                  <input type="file" accept='image/*' onChange={alterarImagem} />
               </div>
             </div>
-          </div>
-          <div className="buttons-save-cancel">
-            <button onClick={salvarBD}>Salvar</button>
-            <button onClick={products_navigate}>Cancelar</button>
+            <div className="buttons-save-cancel">
+              <button onClick={salvarBD}>Salvar</button>
+                <button onClick={products_navigate}>Cancelar</button>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

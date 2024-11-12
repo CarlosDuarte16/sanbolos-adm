@@ -45,12 +45,12 @@ export default function Sidebar() {
 
       <div className={`comp-sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="logo-name">
-          <img src="assets/image/logo.png" alt="Logo" />
+          <img src="/assets/image/logo.png" alt="Logo" />
           <h1>SanBolos</h1>
         </div>
 
         <div className="profile">
-          <img src="assets/image/person.png" alt="Perfil" />
+          <img src="/assets/image/person.png" alt="Perfil" />
           {consulUsuario.length > 0 ? (
             consulUsuario.map((item, index) => (
               <div key={index}>

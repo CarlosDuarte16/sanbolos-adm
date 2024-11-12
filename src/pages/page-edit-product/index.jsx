@@ -11,8 +11,23 @@ export default function EditProduct() {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [disponivel, setDisponivel] = useState(false);
+  const [imagem, setImagem] = useState(null);
   const navigate = useNavigate();
 
+
+  function alterarImagem(e) {
+    const file = e.target.files[0];
+
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagem(reader.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      toast.error("Por favor, selecione um arquivo de imagem válido.");
+    }
+  }
 
 
   async function carregarProduto() {
@@ -30,6 +45,10 @@ export default function EditProduct() {
     }
   }
 
+  async function products_navigate() {
+    navigate('/products')
+  }
+
   useEffect(() => {
     carregarProduto();
   }, [id]);
@@ -39,8 +58,7 @@ export default function EditProduct() {
       "nome": title,
       "descrição": description,
       "preço": price,
-      "image": '',
-      "disponibilidade": disponivel
+      "image": imagem,
     };
 
     try {
@@ -77,40 +95,44 @@ export default function EditProduct() {
 
   return (
     <div className="page-edit-product">
-      <Sidebar />
-      <div className="rigth-add">
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="rigth-adit">
         <div className="descrissao-page">
           <img src="/assets/image/mini-cake.png" alt="" />
-          <h1>Editar Produto</h1>
+          <h1>Edição Produto</h1>
         </div>
         <div className="inputs">
           <div className="input-title-product">
-            <h3>Título do Produto</h3>
-            <input placeholder={title} type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
+            <h3>Titulo do Produto</h3>
+            <input type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
           </div>
           <div className="input-description-product">
             <h3>Descrição</h3>
             <textarea value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
           </div>
-          <div className="input_price-input-boolean">
+          <div className="input_price-input-image">
             <div className="input-price-product">
               <h3>Preço</h3>
-              <input value={price} maxLength={4} onChange={e => setPrice(e.target.value)} type="text" />
+              <input value={price} maxLength={6} onChange={e => setPrice(e.target.value)} type="text" />
             </div>
-            <div className="input-availability-product">
-              <h3>Disponível</h3>
-              <div className="radio">
-                <input type="checkbox" checked={disponivel} onChange={e => setDisponivel(e.target.checked)} />
+            <div className="input-file-product">
+              <h3>Upload de Imagem</h3>
+              <div className="input-file">
+                <input type="file" accept='image/*' onChange={alterarImagem} />
               </div>
             </div>
           </div>
           <div className="buttons-save-cancel">
-            <button className='button-link' onClick={salvarBD}>Salvar</button>
+            <button onClick={salvarBD}>Salvar</button>
             <button className='button-link' onClick={deletarProduto}>Apagar</button>
-            <Link className='button-link' to='/products'>Cancelar</Link>
+            <button onClick={products_navigate}>Cancelar</button>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+

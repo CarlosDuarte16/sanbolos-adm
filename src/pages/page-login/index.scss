@@ -17,7 +17,7 @@
   background-color: rgba(255, 255, 255, 0.85);
   padding: 50px;
   border-radius: 15px;
-  width: 30%;
+  width: 400px;
   align-items: center;
   margin: 10% auto;
 }
@@ -71,36 +71,15 @@
   font-size: 1.55em;
 }
 
-@media (max-width: 768px) {
+
+
+@media (max-width: 560px) {
   .card-login {
-    width: 80%;
-    padding: 30px;
-    margin: 20% auto;
-  }
+    padding: 25px;
+    height: 360px;
+    margin-top: 5em;
+    width: 300px;
 
-  .card-login h2 {
-    font-size: 2em;
-  }
-
-  .card-login .input p {
-    font-size: 1em;
-  }
-
-  .card-login .input input {
-    padding: 10px;
-    font-size: 0.9em;
-  }
-
-  .card-login button {
-    font-size: 1.2em;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .card-login {
-    width: 90%;
-    padding: 20px;
   }
 
   .card-login h2 {

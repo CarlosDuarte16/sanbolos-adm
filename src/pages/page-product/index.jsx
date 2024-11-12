@@ -32,9 +32,11 @@ export default function Products() {
         <Sidebar />
       </div>
       <div className="rigth-product">
-        <div className="descrissao-page">
-          <img src="/assets/image/mini-cake.png" alt="" />
-          <h1>Meus Produtos</h1>
+        <div className="descriçao-page">
+          <div className='LE'>
+            <img src="/assets/image/mini-cake.png" alt="" />
+            <h1>Meus Produtos</h1>
+          </div>
           <Link className='add' to="/add-product">
             <div className="adicionar">
               <img src="/assets/image/lapis.png" alt="" />
@@ -50,7 +52,7 @@ export default function Products() {
                   <img src={item.image} alt={item.nome} />
                   <h3>{item.nome}</h3>
                   <p>R${item.valor}</p>
-                </div>
+                </div> 
               </Link>
             ))
           ) : (
