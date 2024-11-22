@@ -40,7 +40,7 @@ export default function AddProduct() {
     if (isNaN(price) || parseFloat(price) <= 0) {
       toast.error("O preço deve ser um número válido maior que zero.");
       return;
-    }
+    } 
     if (!imagem) {
       toast.error("Por favor, adicione uma imagem do produto.");
       return;
@@ -48,11 +48,11 @@ export default function AddProduct() {
     const salvador = {
       nome: title,
       descrição: description,
-      preço: price,
+      valor: price,
       image: imagem,
     };
     try {
-      const url = 'http://4.172.207.208:5012/inserirProduto';
+      const url = 'http://4.172.207.208:5012/inserirProduto/';
       await axios.post(url, salvador);
       toast.success("Produto adicionado com sucesso.");
       navigate('/products');
@@ -67,18 +67,18 @@ export default function AddProduct() {
           <Sidebar />
         </div>
         <div className="rigth-add">
-          <div className="descrissao-page">
+          <div className="descriçao-page">
             <img src="/assets/image/mini-cake.png" alt="" />
             <h1>Novo Produto</h1>
           </div>
           <div className="inputs">
-            <div className="input-title-product">
+            <div className="input-title-product-first">
               <h3>Titulo do Produto</h3>
-              <input type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
+              <input className='input1' type="text" value={title} maxLength={50} onChange={e => setTitle(e.target.value)} />
             </div>
-            <div className="input-description-product">
+            <div className="input-description-product-first">
               <h3>Descrição</h3>
-              <textarea value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
+              <textarea  className='input2' value={description} maxLength={100} onChange={e => setDescription(e.target.value)} rows='4'></textarea>
             </div> 
             <div className="input_price-input-image">
               <div className="input-price-product">

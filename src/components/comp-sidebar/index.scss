@@ -112,7 +112,6 @@
   }
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
   .comp-sidebar {
     width: 20vh;
@@ -137,7 +136,7 @@
     background-color: #4F362F;
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 10px;  
     font-size: 24px;
     cursor: pointer;
     z-index: 1001;
