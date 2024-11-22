@@ -10,7 +10,6 @@ export default function EditProduct() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
-  const [disponivel, setDisponivel] = useState(false);
   const [imagem, setImagem] = useState(null);
   const navigate = useNavigate();
 
@@ -39,7 +38,6 @@ export default function EditProduct() {
       setTitle(produto.nome);
       setDescription(produto.descrição);
       setPrice(produto.valor);
-      setDisponivel(produto.disponibilidade);
     } catch (error) {
       console.error('Erro ao carregar o produto', error);
     }
