@@ -1,5 +1,5 @@
 import './index.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/comp-sidebar';
 
 import axios from 'axios';
