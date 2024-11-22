@@ -31,7 +31,8 @@ export default function EditProduct() {
 
   async function carregarProduto() {
     try {
-      const url = `http://4.172.207.208:5012/consultarProdutos/${id}`;
+      const url = `http://localhost:5001/consultarProdutos/${id}`;
+      // const url = `http://4.172.207.208:5012/consultarProdutos/${id}`;
       let resp = await axios.get(url);
 
       const produto = resp.data;
@@ -65,7 +66,8 @@ export default function EditProduct() {
       } else if (isNaN(price) || parseFloat(price) <= 0) {
         toast.error("O preço deve ser um número válido maior que zero!!");
       } else {
-        const url = `http://4.172.207.208:5012/alterarProduto/${id}`;
+        const url = `http://localhost:5001/alterarProduto/${id}`;
+        // const url = `http://4.172.207.208:5012/alterarProduto/${id}`;
         await axios.put(url, produto);
         toast.success(`Produto ${title} alterado com sucesso!`);
         navigate('/products')
@@ -81,7 +83,8 @@ export default function EditProduct() {
 
     if (confirmar) {
       try {
-        const url = `http://4.172.207.208:5012/removerProduto/${id}`;
+        const url = `http://localhost:5001/removerProduto/${id}`;
+        // const url = `http://4.172.207.208:5012/removerProduto/${id}`;
         await axios.delete(url);
         toast.success(`Produto ${title} deletado com sucesso!`);
         navigate('/products');

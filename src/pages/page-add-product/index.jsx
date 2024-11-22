@@ -48,11 +48,13 @@ export default function AddProduct() {
     const salvador = {
       nome: title,
       descrição: description,
-      valor: price,
+      preço: price,
       image: imagem,
     };
     try {
-      const url = 'http://4.172.207.208:5012/inserirProduto/';
+      const url = 'http://localhost:5001/inserirProduto/';
+      // const url = 'http://4.172.207.208:5012/inserirProduto/';
+      console.log(salvador)
       await axios.post(url, salvador);
       toast.success("Produto adicionado com sucesso.");
       navigate('/products');
