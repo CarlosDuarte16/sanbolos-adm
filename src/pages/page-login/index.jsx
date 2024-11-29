@@ -1,6 +1,6 @@
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
-import { useState} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
@@ -12,14 +12,16 @@ export default function Login() {
 
 
   async function entrar() {
-    
-    try { console.log("entrou")
+
+    try {
+      console.log("entrou")
       const usuario = {
         nome,
         senha
       }
-  
-      const url = `http://4.172.207.208:5012/entrar/`
+
+      // const url = `http://4.172.207.208:5012/entrar/`
+      const url = `http://localhost:5001/entrar/`
       let resp = await axios.post(url, usuario)
       console.log(resp)
 
@@ -34,7 +36,7 @@ export default function Login() {
       alert("Erro ao conectar ao servidor. Tente novamente mais tarde.");
     }
   }
-  
+
 
 
   return (
